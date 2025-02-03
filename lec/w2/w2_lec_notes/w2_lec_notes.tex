@@ -1,0 +1,166 @@
+\documentclass[12pt]{article}
+
+\title{Week Two Lecture Notes}
+\author{
+	Evan M Drake \\
+	\texttt{drakeev@butte.edu}
+}
+
+
+\usepackage{snow-preamble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+	\maketitle
+	\tableofcontents
+
+	\newpage
+
+	%% body start
+
+	\section{Data Types in MATLAB}
+		In the below we can see a graphic depicting the type tree of MATLAB.
+		While giving you a good picture of how the types are related and what exactly they mean,
+			this can look complicated.
+		The idea to understand is that it is generally the case that specific data types such as numerics,
+			often give rise vase to bodies of data types such as floating-point (real numbers),
+			integers,
+			complex numbers,
+			which creates type hierarchies within languages that can be exploited when optimizing. \\
+
+		\includegraphics[width=\textwidth]{DT}
+
+	\section{Common operators}
+		Arithmetic is an important capability of MATLAB.
+		As such the language contains all common arithmetic operators:
+		\begin{itemize}
+			\item Association: ( )
+			\item Unary: positive +, negative -
+			\item Arithmetic: \verb| +, -, *, /, ^ log, \% |
+			\item Relational: \verb| <, >, <=, >=, ==, ~= |
+			\item Logical (Bitwise): \verb| &, &&, | |, ||
+		\end{itemize}
+
+	\subsection{Operator Precedence}
+		\begin{enumerate}
+			\item ( )
+			\item \verb| ^ .^ ’ .’ (pure transpose)|
+			\item \verb| + (unary plus) - (unary minus) ~ (NOT)|
+			\item \verb| * / \ .* ./ . |
+			\item \verb| + (addition) - (subtraction)|
+			\item \verb| : |
+			\item \verb| > < >= <= == ~=|
+			\item \verb| & (AND)|
+			\item | (OR)
+			\item \verb| && (scalar AND) |
+			\item || (scalar OR)
+			\item \verb| = (assignment) |
+		\end{enumerate}
+
+	\section{Variables}
+		A variable is a \emph{value} bound to some arbitrary \emph{name}.
+		It is the case that the name must be some \emph{word} (bound by the English alphabet and Arabic numerals in our case).
+		Recall a we use word here as in set theory in which a word is some combination of values from a set.
+		For example "and" is a word in English b/c $[a, n, d]$ are all from the set of English letters.
+		Note that in MATLAB the names must start with a letter but can then contain arbitrary numbers.
+		\subsection{Values / Expressions}
+			Here a value is represented by any expression.
+			An expression can be thought of as a kind of solvable,
+				sequence of operations (equation),
+				in discrete space\footnote{we must always be in discrete space on a computer}.
+			So an example of an expression is $f(x) = x+5$ where $x+5$ is our expression.
+			This represents a solvable,
+				sequence of operations that is seemingly in discrete space.
+		\subsection{The assignment operator}
+			The assignment operator $=$ is how we will create variables in MATLAB.
+			Note that in pseudocode they are often created using the binding operator $\leftarrow$.
+	
+	\section{Collections}
+		A collection can be thought of as simply a homogeneous "bag of stuff".
+		Where everything in the bag is of the same type.
+		We can think of a bag of marbles,
+			each "thing" in the bag is a glass bead but maybe they are of varying sizes.
+		We can extend the idea of collections to many different structures in type theory.
+		But it is important to understand collections for pseudo code purposes as they can assist in optimization.
+
+		\subsection{Array}
+			An array is simply an ordered collection of finite, predetermined size.
+			In particular this means that we must know the size of an array before we create it.
+			An array has order and therefore each item in it has an index with which we can find it.
+
+		\subsection{Vector}
+			A vector is a bit different from an array in that it has no predetermined size.
+			An array has dynamic size,
+			in particular the size of a vector can be augmented on the fly for convenience.
+			Vectors also have a concept of \emph{direction},
+				this concept should be familiar from linear algebra.
+			We can create row vectors and/or column vectors.
+			Thus we can also create matrices.
+
+		\subsection{Matrix}
+			The bases of linear algebra is the matrix and thus the we will define it here.
+			A matrix is such that it contains both row and column vectors,
+				giving rise to the common visualization of a kind of box of squares.
+			Note that a matrix can be given a flattened visualization that is simply a vector of vectors.
+
+		\subsection{Collection operations}
+			\begin{itemize}
+				\item Array Arithmetic: \verb| +, -, *, / | are mapped over the array space
+				\item Vector arithmetic: inherits array arithmetic with extra rules for direction
+				\item Matrix math: \emph{transpose}, \emph{multiplication} are the big ones here
+			\end{itemize}
+
+			Vector math can only be done between two vectors of the same length and direction.
+			We wont worry about Cross multiplying as the calculation is easy to look up but difficult to memorize in our context.
+
+			\begin{align*}
+				\vec{u} + \vec{v} &\defeq \lbrack u_1+v_1,u_2+v_2...\rbrack \\
+				\vec{u} - \vec{v} &\defeq \lbrack u_1-v_1,u_2-v_2...\rbrack \\
+				\vec{u}\alpha &\defeq \lbrack u_1\alpha,u_2\alpha...\rbrack \\
+				\vec{u} * \vec{v} &\defeq \sum_i^n u_iv_i \text{s.t} \\
+				\text{\emph{Euclidean length} }\vec{u} &\defeq \sqrt{\sum_i^n u_i^2} \\
+				\text{\emph{where} } n &\implies (|v| = |u|)
+			\end{align*}
+
+			The above are some of the common vector operations we will see in homework and labs.
+			The most common Matrix operation in linear algebra is matrix multiplication as such we will deal with that often.
+			Now I will urge you to revisit some linear algebra,
+				I keep a reference with me and will probably have it in class often \cite{savov}.
+
+			\begin{align*}
+				A = &\mathbb{R}^{m x l} \\
+				B = &\mathbb{R}^{l x n} \\
+				|A * B| &\defeq \mathbb{R}^{m x n} \\
+				A * B &\defeq A_R*B_C + A_{R+1}B_{C+1} + ...
+			\end{align*}
+
+			This will make much more sense after some muscle memory is used in the homework and assignments.
+
+			\section{Linear Algebra}
+				
+				\subsection{Matrix Algebra}
+
+				\subsection{Reduced Row echelon form}
+
+				\subsection{Guass-Jordan Elimination}
+
+
+	%% body finish
+
+	\cite{*}
+
+	\newpage % bib
+	\backmatter
+	\addcontentsline{toc}{section}{References}
+	\printbibliography
+
+	\newpage % index
+	\printindex
+
+	\newpage % appendices
+	\appendix
+		\section{Helpful Links}
+		\href{https://www.mathworks.com/content/dam/mathworks/fact-sheet/matlab-basic-functions-reference.pdf}{List of common commands}
+
+\end{document}
+
