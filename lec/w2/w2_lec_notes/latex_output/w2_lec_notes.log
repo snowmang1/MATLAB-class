@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.1)  2 FEB 2025 16:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.1)  4 FEB 2025 14:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1153,7 +1153,11 @@ Writing index file w2_lec_notes.idx
 )
 \@quotelevel=\count468
 \@quotereset=\count469
- (latex_output/w2_lec_notes.aux)
+ (latex_output/w2_lec_notes.aux
+
+LaTeX Warning: Label `aug_matrix' multiply defined.
+
+)
 \openout1 = `w2_lec_notes.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
@@ -1176,8 +1180,7 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
 )
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -1253,7 +1256,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--30
 
  []
 
-<./img/DT.png, id=88, 560.0925pt x 329.23pt>
+<./img/DT.png, id=109, 560.0925pt x 329.23pt>
 File: ./img/DT.png Graphic file (type png)
 <use ./img/DT.png>
 Package pdftex.def Info: ./img/DT.png  used on input line 31.
@@ -1264,14 +1267,14 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 31--32
  []
 
 [2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-} <./img/DT.png>] [3] [4] [5]
+} <./img/DT.png>] [3] [4] [5] [6] [7] [8] [9]
 
-LaTeX Warning: Citation '*' on page 6 undefined on input line 143.
+LaTeX Warning: Citation '*' on page 10 undefined on input line 403.
 
-[6]
+[10]
 
 Package biblatex Warning: No driver for 'webpage'.
-(biblatex)                Using fallback driver on input line 148.
+(biblatex)                Using fallback driver on input line 408.
 
 [1]
 runsystem(makeindex -s indexstyle.ist w2_lec_notes.idx)...executed safely (allo
@@ -1288,8 +1291,11 @@ L3 programming layer <2024-02-20>
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `w2_lec_notes.out' has not changed.
-(rerunfilecheck)             Checksum: 75C63CF2ABA0AA5A8B63D2CC206576DB;1707.
+(rerunfilecheck)             Checksum: 7CB7A2CFEB59FBBC0DD1148751069970;2298.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                w2_lec_notes
@@ -1300,10 +1306,10 @@ Package logreq Info: Writing requests to 'w2_lec_notes.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41447 strings out of 474116
- 942712 string characters out of 5743683
- 1937187 words of memory out of 5000000
- 63141 multiletter control sequences out of 15000+600000
+ 41500 strings out of 474116
+ 943499 string characters out of 5743683
+ 1940187 words of memory out of 5000000
+ 63163 multiletter control sequences out of 15000+600000
  578114 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  114i,15n,125p,753b,1307s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1313,24 +1319,26 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
 r/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/l
 ocal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
-cal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></us
-r/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/
-local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/lo
-cal/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/loca
-l/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/
-texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/te
-xlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texl
-ive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texliv
-e/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/
-2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/20
-24/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2024
-/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2024/t
-exmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2024/tex
-mf-dist/fonts/type1/public/cm-super/sftt1440.pfb>
-Output written on latex_output/w2_lec_notes.pdf (8 pages, 321162 bytes).
+cal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loca
+l/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/
+local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></
+usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></us
+r/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/
+local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/lo
+cal/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/loca
+l/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/
+texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/te
+xlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texl
+ive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texliv
+e/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/
+2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/20
+24/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2024
+/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2024/t
+exmf-dist/fonts/type1/public/cm-super/sftt1440.pfb>
+Output written on latex_output/w2_lec_notes.pdf (12 pages, 360260 bytes).
 PDF statistics:
- 257 PDF objects out of 1000 (max. 8388607)
- 201 compressed objects within 3 object streams
- 39 named destinations out of 1000 (max. 500000)
- 130 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 338 PDF objects out of 1000 (max. 8388607)
+ 274 compressed objects within 3 object streams
+ 70 named destinations out of 1000 (max. 500000)
+ 162 words of extra memory for PDF output out of 10000 (max. 10000000)
 

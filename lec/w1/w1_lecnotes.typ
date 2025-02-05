@@ -129,7 +129,6 @@ This exposes another trait of expressions,
 namely that if variables are not well defined at evaluation time expression can not be evaluated.
 Different languages have different strategies for solving this phenomenon but that is beyond our scope.
 
-
 === Statements
 Recall @simple_binding and the basic structure of a bindings.
 Bindings in the theory of computation are regularly referred to as *statements*.
