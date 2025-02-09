@@ -1,0 +1,214 @@
+\documentclass[12pt]{article}
+
+\title{Week Three Lecture Notes}
+\author{
+	Evan M Drake \\
+	\texttt{drakeev@butte.edu}
+}
+
+\usepackage{snow-preamble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+	\maketitle
+	\tableofcontents
+
+	\newpage
+
+	%% body start
+
+	\section{Programmatic Problem Solving}
+		Lets discus how we should approach solving problems with programming.
+		It is always a good idea to have an overview of the process.
+		It is my belief that starting on paper and "mathing out" the problem is the best start.
+		\subsection{Assess Problem}
+			We need to understand the problem requirements.
+			The information at our disposal and the information required for the problem.
+			Some times this is going to mean research into the problem space.
+			For example if you are trying to design a stop light at an intersection there will be an education period.
+			What are the subtlety's of the problem space?
+			The light should detect cars;
+				how is this commonly done? What are the mechanisms that detect cars and how do we interact with them.
+			The problem assessment will always be the place with the most research required until we have a good understanding of the \textit{problem space}.
+
+		\subsection{Define Problem}
+			Once we understand the problem space,
+				maybe we have a list of each sub-mechanism and how we will interact with them.
+			We will begin to design our problem,
+				think of this as drawing a boarder around our problem subset so we can \textit{divide and conquer}.
+			Think of this period as breaking our problem space up into smaller and smaller problems,
+				then find a subset of those that we need to solve.
+			For the traffic light problem that may mean we simply need the green light to turn on in sequence after the red light turns off.
+			This is a much simpler task than the original "build a traffic light" problem.
+
+		\subsection{Gather Data}
+			Here we will gather data on our problem subset.
+			Keeping with our traffic light analogy,
+				this may mean looking up how we take signals from the individual lights.
+			This will always mean some sort of data gathering for the mechanics of your actual solution.
+
+		\subsection{Develop Algorithm}
+			Algorithm development can happen in many forms though there are two popular ways.
+			The \textbf{Top-Down} approach allows us to begin with the input data and work our way to producing the required output data.
+			The \textbf{Bottom-Up} approach will begin with the required result and build an algorithm that produces that result using some specific input data.
+			In engineering it should nearly always be the case that your input data is known at the start so the top down approach may look easier.
+			I challenge you to look at both approaches in detail as there will be times where one is obviously superior and times when one is not.
+			Here,
+				using one of the above approaches we will formulate some math or pseudocode for our algorithm.
+
+			\begin{lstlisting}[style=pseudocode]
+// pseudo code for light change
+green_on = getGreenLightStatus()
+red_on   = getRedLightStatus()
+
+if green_on {
+	waitTenSec()
+	turnOffLight(green)
+	turnOnLight(red)
+}
+if red_on {
+	waitTenSec()
+	turnOffLight(red)
+	turnOnLight(green)
+}
+			\end{lstlisting}
+
+		\subsection{Program Algorithm}
+			In this step we choose a language and begin to program.
+			We design this program with the objective of fitting our algorithm into the context of its environment.
+			If there is preexisting code,
+				we must account for this and adjust our code to fit that preexisting code in style and format.
+			All cases in this class will be that you do not have to match preexisting code unless otherwise specified.
+			Here will choose MATLAB as the language and write some matlab code to solve our problem.
+			\begin{lstlisting}[style=code, language=MATLAB]
+g = greenStatus() \% 1 == green on, 0 otherwise
+r = redStatus()		\% 1 == red on, 0 otherwise
+
+if g == 1 
+	waitTenSec()
+	turnOffLight('green')
+	turnOnLight('red')
+end
+if r == 1
+	waitTenSec()
+	turnOffLight('red')
+	turnOnLight('green')
+end
+			\end{lstlisting}
+			The above MATLAB code assumes that we have some predefined functions,
+				namely: greenStatus, waitTenSec, turnOffLight, and turnOnLight.
+			This is valid MATLAB code otherwise and will fit as the implementation of our pseudocode.
+
+		\subsection{Evaluate}
+			Now we have to test our code and ensure that it will function properly in the desired case.
+			We will always have some way to test code,
+				whether it is formal tests, type validation, or by hand.
+			Testing ensures that when we use the code in the field failure is more controlled.
+			This is out of the scope of this course.
+
+		\subsection{Implantation of program}
+			At this step we push the code to the desired hardware and it runs.
+			This is out of the scope of this course.
+
+	\section{Files and Functions}
+		Here we will discus files on a computer,
+			how they work,
+			how we will use them,
+			and how MATLAB uses them.
+		We then venture into the topic of functions examining how they help us and how to use them.
+
+		\subsection{File systems}
+			What is a file system?
+			Anyone who has used a computer (even before GUI's) will understand that accessing files is a crucial role of computers.
+			A file system is essential your computers method of keeping track of each \textit{file} on the system.
+			In windows this is very complex,
+				thus here I will explain things in terms of Linux\footnote{
+				this makes no difference to an engineering student I simply felt that I should state it here.}
+			Every piece of data on a computer is a file of some kind,
+				thus keeping track of files is a priority job of the OS.
+			The file system allows for efficient indiscriminate tracking of each and every file.
+			The structure of the file system is something that we call a \textit{tree} in computer science.
+			Which looks something more like an upside down tree when drawn but non-the-less is a branching,
+				growing structure which is quickly searchable.
+			Each file is callable through this tree and lives in a specific and special place.
+			As this applies to MATLAB there is only specific important info to remember.
+			\begin{enumerate}
+				\item Each file has a specific name
+				\item Each file has an extension that defines its contents
+				\item Each file has a special location
+			\end{enumerate}
+			If for example we look at the file \textit{~/Documents/classes/csci04/teach.py}.
+			The \textbf{location} of this file is \textit{~/Documents/classes/csci04}.
+			Which translates into: in the \textit{csci04} directory;
+				which is inside the \textit{classes} directory;
+				which is inside the \textit{Documents} directory;
+				which is inside the \textit{~} directory.
+			The \textbf{name} of the file in question is \textit{teach.py}.
+			Using the name we can call on this file from anywhere in the file system as long as we know the location as well.
+			The \textbf{extension} of this file is \textit{.py},
+				signifying it as a python file containing the python programming language.
+
+		\subsection{File IO}
+			MATLAB contains many ways to import data from different kinds of files.
+			In this course we will utilize \textit{.csv} files for our data usually.
+			These are standard scientific spreadsheet style data files.
+			MATLAB reads these files most easily using the \textbf{readtable} function.
+			\begin{lstlisting}[style=code, language=MATLAB]
+T = readtable("squid.csv")
+			\end{lstlisting}
+			The above code will read in the data from file \textit{squid.csv} into the variable \textit{T}.
+			If and only if the desired file is in your working directory,
+				your working directory being the directory your currently working in.
+			In the MATLAB online environment you will not have to worry about the working directory.
+			
+		\subsection{Functions}
+			Functions are powerful tools in mathematics,
+				allowing for abstracting complexity and providing portability.
+			In programming functions have the same sort of usefulness,
+				with portability being the most useful attribute here.
+			When a function is portable it means that invoking that function is easier than rewriting all the logic of the function.
+			\nomenclature{invoke}{meaning to call a function in the code to run its desired logic and give a result.}
+			Examples of function invocations can be seen above in the traffic light code examples,
+				they allowed me to abstract complexity of certain systems.
+			Function going forward will provide us with easily reusable code.
+			In MATLAB the syntax for a function is a bit esoteric.
+			\nomenclature{esoteric}{not intuitive outside of a certain community of scholars.}
+			\begin{lstlisting}[style=code, language=MATLAB]
+function o = squid(x,y)
+	o = x + y;
+end
+			\end{lstlisting}
+			The above fxn has the name \textit{squid}.
+			The fxn takes two inputs,
+				namely $x$ and $y$,
+				and has output $o$.
+			We define the structure of a function definition below.
+			Using the function once defined is quite easy,
+				simply call it with desired inputs $\text{squid}(5,6) \defeq 11$
+			\begin{lstlisting}[style=pseudocode]
+function <output name> = <name>(<input list>)
+	<function body>
+	<output name> = <result>;
+end
+			\end{lstlisting}
+
+
+	%% body finish
+
+	\nocite{*} % print all refs even if they are not required
+
+	\newpage % bib
+	\backmatter
+	\addcontentsline{toc}{section}{References}
+	\printbibliography
+
+	\newpage % index
+	\printindex
+
+	\newpage % appendices
+	\appendix
+		\section{Helpful Links}
+		\href{https://www.mathworks.com/content/dam/mathworks/fact-sheet/matlab-basic-functions-reference.pdf}{List of common commands}
+
+\end{document}
+
