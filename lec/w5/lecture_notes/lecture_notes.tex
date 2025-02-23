@@ -18,7 +18,86 @@
 
 	%% body start
 
-	\section{}
+	\section{Polynomial Expressions}
+		We are quite familiar with these already since you have taken calculus even if you do not realize it.
+		A single \textit{nomial} is a term inside any expression.
+		\begin{equation} \label{nomial}
+			f(x) = x + 5
+		\end{equation}
+		In Eq \eqref{nomial} we can see this is a \textit{monomial}.
+		Lets break it down to the root words mono and nomial.
+		\begin{itemize}
+			\item mono: from the Greek word \textit{monos}, meaning "alone".
+			\item nomial: from the Greek word \textit{nom\'os}, meaning "part of" or "portion".
+		\end{itemize}
+		We can discern the word now to mean some single piece.
+		Tacitly referring to the existence of only a single term in Eq \eqref{nomial}.
+		This continues with \textit{Binomial} and \textit{Trinomial} but is eventually generalized to \textit{Polynomial}.
+		Where again the root word analysis will give you the meaning: many portions.
+		Referring to the existence of multiple terms within the equation.
+		\begin{equation}\label{poly}
+			x + y + z
+		\end{equation}
+		A polynomial expression can take the form of something like Eq \eqref{poly},
+			In which the equation has multiple terms.
+		This concept is trivial to understand and happens often in different fields of mathematics.
+		We now discuss the \textit{coefficients} of polynomials.
+		The coefficient can be root word analyzed though it may not be helpful.
+		We will instead assert that the coefficient is any internal multiple of a term
+		(what the hell does that mean????).
+		This means that for Eq \eqref{poly} the coefficients are $\{1,1,1\}$.
+		Lets see a more common example.
+		\begin{equation}\label{poly2}
+			5x^2 + 2x + 10
+		\end{equation}
+		We can see in Eq \eqref(poly2) a common polynomial to anyone who has studied calculus.
+		The coefficients here are $\{5, 2, 10\}$.
+		The reasoning here is to do with each term in the equation.
+		The first term: $5 x^2 \implies \text{ coefficient } 5$.
+		The second term: $2 x^1 \implies \text{ coefficient } 2$.
+		The third term: $10 x^0 \implies \text{ coefficient } 10$.
+		The third term may seem a bit strange but it is true that any number (generally) raised to the power of zero is one,
+			thus the logic is sound.
+		Can we use this fact to encode specific kinds of polynomials into a computer environment?
+		Yes,
+			If we know the structure of the polynomial then it is a trivial task to create a \textit{coefficient row vector}.
+		\begin{equation}
+			5x^2 + 2x + 10 \implies \vec{v} = [5, 2, 10]
+		\end{equation}
+		We have seen this before its just a row vector.
+		In a programming environment we refer to this structure as a \textit{coefficient array},
+			although for the purposes of this course array and row vector are synonyms.
+		Matlab can find the roots of this polynomial for us automagically,
+			using this kind of row vector.
+		\begin{lstlisting}[style=pseudocode]
+vrow = [5,2,10]
+roots(vrow)
+		\end{lstlisting}
+		The above code uses the MATLAB fxn \textit{roots} to find the roots of the polynomial automagically.
+		Likewise we can have MATLAB plot the expression with the \textit{plot} fxn.
+		MATLAB can help us do statistics on this kind of data as well.
+		We are in an applied field thus we work in discrete space meaning we almost always have data before a fxn.
+		MATLAB can help us analyze that data in order to fit a fxn to it.
+		We can use \textit{Interpolation},
+			where we fill in missing portions of data to help form a more continuous space.
+		We can perform \textit{Regression},
+			the prediction of data using what was already measured.
+
+	\section{Interpolation}
+		I will leave the VAST majority of this topic to your future stats professor.
+		Generally interpolation is the estimation of missing data points using the surrounding data.
+		Notice the estimation must be made on (dimensionally arbitrary) surrounded missing data.
+		We can use the MATLAB fxn \textit{interp1} for this purpose.
+
+		It is always a good idea to visualize any data throughout the process of interpolation.
+		
+	\section{Regression}
+		I will leave the VAST majority of this topic to your future stats professor.
+		Generally regression is the prediction of lone data from existing data.
+		To make educated regressions we assume the data can be fit to a fxn,
+			and there are no uncontrolled variables.
+		We will almost always use the \textit{polyfit} fxn for regression in this course.
+		
 
 	%% body finish
 

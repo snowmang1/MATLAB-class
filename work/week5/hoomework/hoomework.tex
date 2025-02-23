@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+
+\title{Hoomwork}
+\author{
+	Evan M Drake \\
+	\texttt{}
+}
+
+\usepackage{snow-preamble}
+
+\renewcommand*{\thesubsection}{\roman{subsection}.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+	\maketitle
+
+	%% body start
+	Remember that you need to answer the questions but more importantly,
+		you need to explain your thought process through the questions.
+
+	\section*{Question 1}
+		Please encode the following polynomials in a form that is easily processed by a computer.
+		It is not be \textit{necessary} to use MATLAB code for this.
+		\subsection{$x^2 + x^1 + 0$}
+		\subsection{$y^2 + 5y^1$}
+		\subsection{$25z^10 + 2z^5 + 20$}
+		\subsection{$c_0x^4 + c_1x^3 + c_2x^2, c_3x^1, c_4x^0$}
+
+	\section*{Question 2}
+		Please decode the following coefficient row vectors to their respective polynomials.
+		These polynomials should be simplified,
+			thus no including those \textit{parts} that are zero.
+		\subsection{$\vec{c} = [4,3,2,1]$}
+		\subsection{$\vec{a} = [25,0,0,0,0,0,0,0,0,0,0,0,0,1]$}
+		\subsection{$\vec{v} = [1]$}
+		\subsection{$\vec{r} = [4,5,6,0,0,0,1,0,2,0,0,0,1]$}
+
+	\section*{Question 3}
+		Answer the following to the best of your ability,
+			These are all questions about polynomial encoding.
+		\begin{enumerate}
+			\item Does the variable or \textit{part} name matter?
+			\item How is the degree of the polynomial encoded?
+			\item Why is it helpful to encode the polynomials? Elaborate.
+		\end{enumerate}
+
+	\section*{Question 4}
+		Please show in MATLAB code how you would encode and plot the following polynomial.
+		$25x^5 + 10x^2 + 5$
+	
+	\section*{Question 5}
+		For the following situation is it appropriate to use interpolation or regression? \\
+
+		\indent You are given data that has a large whole in the middle and have been asked to estimate that data.
+
+	\section*{Question 6}
+		For the following situation is it appropriate to use interpolation or regression? \\
+
+		\indent You have been given data that is extensive in several dimensions and you have been asked to estimate more data from all existing data on a single dimension.
+
+	%% body finish
+
+	\nocite{*}
+
+	\newpage % bib
+	\backmatter
+	\addcontentsline{toc}{section}{References}
+	\printbibliography
+
+	\newpage % index
+	\printindex
+
+	\newpage % appendices
+	\appendix
+
+\end{document}
+
