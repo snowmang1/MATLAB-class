@@ -1,0 +1,172 @@
+\documentclass[12pt]{article}
+
+\title{Loops and Control Flow Structures}
+\author{
+	Evan M Drake \\
+	\texttt{drakeev@butte.edu}
+}
+
+
+\usepackage{snow-preamble}
+\makenomenclature
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+	\maketitle
+	\tableofcontents
+
+	\newpage
+
+	%% body start
+
+	\section{Loops and Control Flow}
+		\subsection{Loops}
+			\subsubsection{theory}
+				What is a loop?
+				Why is it important to computer science (CS)?
+				It is my experience that this topic is usually thrust onto students with the promise that it will make sense one day.
+				Here we will (attempt) to examine a loop with the intent to understand its purpose in CS.
+				See the summation fxn taken from set theory mathematics.
+
+				\begin{equation} \label{power_fxn}
+					\sum^{100}_{k=0} a^k
+				\end{equation}
+				\nomenclature{$\sum$}{The summation function taken from set theory}
+
+				The setup in Eq (\eqref{power_fxn}) should look familiar,
+					its a basic summation invocation.
+				The intent of the fxn is for all numbers of the form $a^k$ to be summed together.
+				This while very useful to continuous (or simply vast) fields can be a bit difficult to understand.
+				That is, to understand well enough to explain to a computer.
+				We can accomplish this in a variety of ways,
+					though I will tend to usher you towards the way of \textbf{iteration}.
+				The art of iteration in computer science is simply to repeat a command over and over again.
+				I like to use the example of the Ouroboros for those trying to visualize it.
+				Iteration will allow us to create repeated work for some arbitrary limit similar to the summation.
+				What I mean by arbitrary limit can be observed as the $100$ from Eq (\eqref{power_fxn}).
+				There is another path to iteration I will introduce briefly but I will not put it here,
+					thus discouraging you from its use.
+
+			\subsubsection{code}
+				So how do we use iteration in MATLAB?
+				We can do this in a multitude of ways I will illustrate two of them here.
+				The counting method \textit{for} and the waiting method \textit{while}.
+				These are both iterative loop methods that are built into MATLAB.
+				The \textit{for} loop allows for easy counting as you will see below.
+
+				\pagebreak
+
+				\begin{lstlisting}[style=pseudocode]
+	x = ones(1,10)
+	for n = 2:6
+			x(n) = 2 * x(n - 1)
+	end
+
+	for <iterator> = <start>:<end>
+		<logic using iterator>
+	end
+				\end{lstlisting}
+				
+				We can see the above code has two forms.
+				The first is a literal MATLAB expression that is take directly from the MATLAB docs\footnote{
+					see \url{https://www.mathworks.com/help/matlab/matlab_prog/loop-control-statements.html}
+				}.
+				The second is my usual break down of MATLAB syntax.
+				In this case a for loop is stated by using the keyword \textbf{for}
+					and defining the iterator.
+				Then one must define the range for the iterator (recall this is discrete space).
+				The next code snippet is dedicated to while loops which instead of counting,
+					set a condition for progression.
+
+				\begin{lstlisting}[style=pseudocode]
+	n = 1;
+	nFactorial = 1;
+	while nFactorial < 1e100
+			n = n + 1;
+			nFactorial = nFactorial * n;
+	end
+
+	while <boolean condition>
+			<logic>
+	end
+				\end{lstlisting}
+
+				While loops are similar to for loops and while seemingly less complex can often be more difficult to use.
+
+			\subsection{Control Flow structures}
+				We have already talked about Control Flow in previous lectures.
+				There we also introduced the if statement and a general structure for that as well as the MATLAB structure.
+				Here we will go over some other common structures for conditional logic.
+				The match statement is a way of allowing many choices instead of the standard binary condition.
+				These structures commonly take the form of a mathematical condition structure.
+
+				\begin{equation} \label{math_cases}
+					x =
+					\begin{cases}
+						1 & y = 2 \\
+						2 & y = 4 \\
+						y^2 & y \neq 4
+					\end{cases}
+				\end{equation}
+				\nomenclature{$\neq$}{symbol that equates to truth only when the two given values are not the same}
+
+				We can see in Eq (\eqref{math_cases}) that $x$ takes on different value depending on some variable $y$.
+				This is a common structure in mathematics that does not have the form of an if statement.
+				Thus like most everything else in CS we have taken that general form and made it our own in the form of match (switch) expressions.
+				Below the form is shown in MATLAB.
+
+				\pagebreak
+
+				\begin{lstlisting}[style=pseudocode]
+n = input('Enter a number: ');
+
+switch n
+    case -1
+        disp('negative one')
+    case 0
+        disp('zero')
+    case 1
+        disp('positive one')
+    otherwise
+        disp('other value')
+end
+
+switch <match variable>
+
+	case <match value 1>
+		<logic for match 1>
+					.
+					.
+					.
+	case <match value n>
+		<logic for match n>
+	otherwise
+		<logic for not cases matched>
+end
+				\end{lstlisting}
+
+	\section{Applications}
+		We will discuss the application in class,
+			then and only then will I fill this section out.
+		\subsection{theory}
+		\subsection{code}
+
+	%% body finish
+
+	\nocite{*}
+
+	\newpage % bib
+	\backmatter
+	\addcontentsline{toc}{section}{References}
+	\printbibliography
+
+	\printnomenclature
+
+	\newpage % index
+	\printindex
+
+	\newpage % appendices
+	\appendix
+
+\end{document}
+

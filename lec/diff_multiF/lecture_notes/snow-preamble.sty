@@ -1,0 +1,54 @@
+\ProvidesPackage{snow-preamble}
+
+\usepackage[backend=biber]{biblatex}
+\addbibresource{bib/refs.bib}
+
+\usepackage{listings, xcolor, pgfplots, amsmath, amssymb, graphicx, hyperref, placeins, imakeidx,
+	empheq, placeins}
+\usepackage{quiver} % included in quiver.sty
+\usetikzlibrary{mindmap}
+\usetikzlibrary{patterns}
+
+\makeindex[columns=2, title=Index, options= -s indexstyle.ist, intoc]
+
+\graphicspath{{./img/}}
+
+\pgfplotsset{width=14cm, compat=1.18}
+
+\lstdefinestyle{code}{
+	numbers=left,
+	stepnumber=2,
+	breaklines=true,
+	postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+	basicstyle=\footnotesize,
+	numberstyle=\tiny,
+	numberblanklines=false,
+	keywordstyle=\color{blue},
+	commentstyle=\color{gray},
+	identifierstyle=\color{black},
+	frame=tbrl,
+	frameround=tttt,
+	backgroundcolor=\color{black!3!red!3}
+	}
+
+\lstdefinestyle{pseudocode}{
+	language=C,
+	keywordstyle=\color{blue},
+	commentstyle=\color{gray},
+	identifierstyle=\color{black},
+	frame=shadowbox,
+	rulesepcolor=\color{blue!50!green},
+	frameround=ffft,
+	}
+
+\def\backmatter{
+	\pagenumbering{Roman}
+	\setcounter{page}{1}
+	\setcounter{section}{0}
+	}
+
+\newcommand{\In}{\indent\indent}
+\newcommand{\reff}[1]{$^{\ref{#1}}$}
+% command will pull body files from my body dir
+\newcommand{\mybody}[1]{\input{texbody/#1.latex}}
+\date{06/04/2025}

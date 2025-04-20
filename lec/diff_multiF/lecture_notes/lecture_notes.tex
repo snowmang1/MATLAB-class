@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+
+\title{ODEs and Multivariate functions}
+\author{
+	Evan M Drake \\
+	\texttt{drakeev@butte.edu}
+}
+
+
+\usepackage{snow-preamble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+	\maketitle
+	\tableofcontents
+
+	\newpage
+
+	%% body start
+
+	\section{ODEs}
+		Differential Equations (DE)\footnote{
+			see \url{https://en.wikipedia.org/wiki/Ordinary_differential_equation}
+			}allow us to track $\frac{\Delta}{\text{time}}$ that is to say the change over time of some system.
+		The exact nature of that system is dependent on what makes the system up.
+		An \textit{Ordinary} DE is based around a single differentiator,
+			in particular there is only a single independent variable on which we differentiate.
+		It is the case that there is more complexity to this field that comes in the form of differentiation depth,
+			functions involved in the equation,
+			etc.
+		It is the case that many of my students will be in differential equations at the time of this course,
+			such that an improper or quick overview will not be proper.
+		That is for this section we will learn what MATLAB uses diffs for and how we can solve them.
+		In particular what it means to solve them.
+		\textbf{That I know of} there is no universal goal of solving a DE other than to reduce it to some understandable series.
+
+	\section{Program Organization}
+		This topic is out of scope for engineers,
+			thus I will give the briefest of overviews on this field.
+		You organize a program the same way you organize your thoughts on a problem.
+		In particular you think of a program as a problem to be solved or a theorem to be proved.
+		A program has inputs and outputs such that given its necessary inputs it should always give you the desired output.
+		There is a multitude of ways to do this we discuss in lecture.
+
+	\section{Logical Vectors}
+		A logical vector is special to MATLAB such that I have not seen it else where in the computer science literature.
+		A logical vector is a vector of boolean values,
+			why this could be useful we will discuss in the lecture.
+
+	%% body finish
+
+	\nocite{*}
+
+	\newpage % bib
+	\backmatter
+	\addcontentsline{toc}{section}{References}
+	\printbibliography
+
+	\newpage % index
+	\printindex
+
+	\newpage % appendices
+	\appendix
+
+\end{document}
+
