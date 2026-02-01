@@ -30,10 +30,13 @@ This is a guide to the class and it is possible that things will be moved around
 
 === Week One
 - Overview of course
+- Set theory
 - Overview of Matlab interface
 
 === Week Two
-- Arrays
+- Set theory
+- Matlab interface
+  - Arrays
 - Linear Algebra
 
 === Week Three
